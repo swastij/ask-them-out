@@ -1,13 +1,14 @@
- 
 'use client';
 
 import Title from "@/components/title";
 import Image from "next/image";
 import Link from "next/link";
 
+export const dynamic = 'force-static';
+
 export default function Home() {
   return (
-    <main className="grid justify-items-center gap-2">
+    <main className="grid justify-items-center gap-2 p-4">
       <Title text="
           Oh, you are here!"/>
       <Image priority alt="blush-anime" src="/gifs/blush-anime.gif" width={400} height={100} className="w-[400px] h-auto m-auto rounded-md" />

@@ -1,4 +1,4 @@
- 
+
 
 'use client';
 import MyButton from '@/components/button';
@@ -6,6 +6,8 @@ import Title from '@/components/title';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
+
+export const dynamic = 'force-static';
 
 export default function NoHelp() {
     const [noState, setNoState] = useState(0);
@@ -25,21 +27,21 @@ export default function NoHelp() {
     }, [noState])
     return (
         <div className="bg-blue-100 h-full w-full flex items-center justify-center">
-        <main className="grid justify-items-center gap-2">
-            <Title isBlue text=
-                {(Array(noState + 1).fill(0).map(() => "Please? ")).toString().replace(/,/g, "")} />
-            <Image priority alt="tearful-gif" src={`/gifs/${visibleGif}`} width={400} height={100} className="w-[400px] m-auto rounded-md" />
+            <main className="grid justify-items-center gap-2 p-4">
+                <Title isBlue text=
+                    {(Array(noState + 1).fill(0).map(() => "Please? ")).toString().replace(/,/g, "")} />
+                <Image priority alt="tearful-gif" src={`/gifs/${visibleGif}`} width={400} height={100} className="w-[400px] m-auto rounded-md" />
 
-            <div className="flex items-center gap-2 mt-2 justify-center">
-                <MyButton text="No" onClick={updateNo} isBlue />
-                <Link href='/help' className="h-[50px] p-2 bg-blue-300 border-md border-blue-600 w-fit rounded-md" >
-                    <p className='text-center font-white'>
-                        Okay, fine
-                    </p>
-                </Link>
+                <div className="flex items-center gap-2 mt-2 justify-center">
+                    <MyButton text="No" onClick={updateNo} isBlue />
+                    <Link href='/help' className="h-[50px] p-2 bg-blue-300 border-md border-blue-600 w-fit rounded-md" >
+                        <p className='text-center font-white'>
+                            Okay, fine
+                        </p>
+                    </Link>
 
-            </div>
-        </main>
+                </div>
+            </main>
         </div>
 
     )

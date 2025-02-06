@@ -8,8 +8,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Confetti from 'react-confetti'
 import { useWindowSize } from 'react-use';
-import Image
-    from "next/image";
+import Image from "next/image";
+
+export const dynamic = 'force-static';
+
 export default function AskOut() {
     const [visibleGif, setVisibleGif] = useState('kitty-shy.gif')
     const { width, height } = useWindowSize()
@@ -21,7 +23,7 @@ export default function AskOut() {
         }, 5000)
     }, [])
     return (
-        <main className="grid justify-items-center gap-2">
+        <main className="grid justify-items-center gap-2 p-4">
             {isYes && <Confetti
                 width={width}
                 height={height}

@@ -7,6 +7,8 @@ import Confetti from 'react-confetti'
 import { useWindowSize } from 'react-use';
 import Image from "next/image";
 
+export const dynamic = 'force-static';
+
 export default function AskOut() {
     const [visibleGif, setVisibleGif] = useState('happy-with-tears.gif')
     const { width, height } = useWindowSize()
@@ -18,14 +20,14 @@ export default function AskOut() {
         }, 5000)
     }, [])
     return (
-        <main className="grid justify-items-center gap-2">
+        <main className="grid justify-items-center gap-2 p-4">
             {isYes && <Confetti
                 width={width}
                 height={height}
             />}
             <Title text={visibleGif == "blush-two.gif" && !isYes ? "Please be my valentine? <3" : (!isYes ? "Thank you for reconsidering ..." : "US <3 <3 <3")} />
 
-            <Image priority alt='couple-gif' src={isYes ? "/gifs/mochi-mochi-peach-cat.gif" : `/gifs/${visibleGif}`}  width={400} height={100} className="w-[400px] m-auto rounded-md" />
+            <Image priority alt='couple-gif' src={isYes ? "/gifs/mochi-mochi-peach-cat.gif" : `/gifs/${visibleGif}`} width={400} height={100} className="w-[400px] m-auto rounded-md" />
 
 
             {

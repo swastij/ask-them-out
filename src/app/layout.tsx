@@ -24,6 +24,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+                <link rel='preload' fetchPriority='high' href='/gifs/blush-anime.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/blush-two.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/capoo-letter-capoo-love-letter.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/happy-with-tears.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/cartoon-skaroy-extreme-blush.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/crying.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/heart-broke.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/hopeful-cat.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/kitty-shy.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/love-heartbeat.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/mochi-mochi-peach-cat.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/peach-shy.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/you-make-my-heart-twerk-twerk-it.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/sad.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/gifs/tearful-hamster.gif' as='image' />
+                <link rel='preload' fetchPriority='high' href='/images/oz-oz-yarimasu.gif' as='image' />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
