@@ -31,7 +31,7 @@ export default function No() {
 
                 <Title text={`But I ${(Array(noState + 1).fill(0).map(() => "really ")).toString().replace(/,/g, "")} like you`} isBlue />
 
-                <Image priority alt="pleading-gif" src={`/gifs/${visibleGif}`} width={400} height={400} className="w-full min-w-[400px] h-[400px] object-fit m-auto rounded-md" />
+                <Image priority alt="pleading-gif" src={`/gifs/${visibleGif}`} width={300} height={400} className="w-full min-w-[300px] h-[400px] object-cover m-auto rounded-md" />
 
                 <div className="flex items-center gap-2 justify-center mt-2">
                     <MyButton text="No" onClick={updateNo} isBlue={true} />
