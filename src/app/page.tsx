@@ -6,8 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="grid items-center gap-2">
-
+    <main className="grid justify-items-center gap-2">
       <Title text="
           Oh, you are here!"/>
       <img alt="blush-anime" src="/gifs/blush-anime.gif" className="w-[400px] m-auto rounded-md" ></img>

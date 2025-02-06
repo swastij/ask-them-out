@@ -15,8 +15,7 @@ export default function AskOut() {
     }, 5000)
   }, [])
   return (
-    <div className="bg-pink-100 w-full h-screen flex items-center justify-center gap-2">
-      <main className="grid items-center gap-2">
+      <main className="grid justify-items-center gap-2">
         <Title text=" I need your help in fixing this problem of mine:"/>
         <img alt='ask-gif' src={`/gifs/${visibleGif}`} className="w-[400px] m-auto rounded-md" ></img>
 
@@ -29,6 +28,5 @@ export default function AskOut() {
           }
         </div>
       </main>
-    </div>
   );
 }

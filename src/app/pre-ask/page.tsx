@@ -19,23 +19,22 @@ export default function PreAsk() {
 
 
     return (
-        <div className="bg-pink-100 w-full h-screen flex items-center justify-center gap-2">
-            <main className="grid items-center gap-2">
-                <Title text=" You have a message!"/>
-                {isButtonClicked && <img alt='ask-gifs' src={`/gifs/${visibleGif}`} className="h-[400px] w-full m-auto rounded-md" ></img>}
 
-                <div className="flex items-center gap-2 justify-center mt-2">
-                    {!isButtonClicked && <MyButton text='Open' onClick={() => { setIsButtonClicked(true) }} />
-                    }
-                    {isButtonClicked && visibleGif=="capoo-letter-capoo-love-letter.gif" &&  <Link aria-label='what-is-this' href="/ask" className="h-[50px] p-2 mt-2 bg-pink-300 border-md border-pink-600 w-fit rounded-md" >
+        <main className="grid justify-items-center gap-2">
+            <Title text=" You have a message!" />
+            {isButtonClicked && <img alt='ask-gifs' src={`/gifs/${visibleGif}`} className="h-[400px] w-full m-auto rounded-md" ></img>}
 
-                        <p className='text-center font-white'>
-                            What is this?
-                        </p>
-                    </Link>
-                    }
-                </div>
-            </main>
-        </div>
+            <div className="flex items-center gap-2 justify-center mt-2">
+                {!isButtonClicked && <MyButton text='Open' onClick={() => { setIsButtonClicked(true) }} />
+                }
+                {isButtonClicked && visibleGif == "capoo-letter-capoo-love-letter.gif" && <Link aria-label='what-is-this' href="/ask" className="h-[50px] p-2 mt-2 bg-pink-300 border-md border-pink-600 w-fit rounded-md" >
+
+                    <p className='text-center font-white'>
+                        What is this?
+                    </p>
+                </Link>
+                }
+            </div>
+        </main>
     )
 }

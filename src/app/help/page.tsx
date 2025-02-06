@@ -9,8 +9,7 @@ import React, { useState } from 'react'
 export default function Help() {
     const [isButtonClicked, setIsButtonClicked] = useState(false);
     return (
-        <div className="bg-pink-100 w-full h-screen flex items-center justify-center gap-2">
-            <main className="grid items-center gap-2">
+            <main className="grid justify-items-center gap-2">
                 <Title text=
                     {isButtonClicked ? "Promise you won't go back okay?" : "You agreed to help me! You are so good!!"}>
                 </Title>
@@ -24,6 +23,5 @@ export default function Help() {
                     <MyButton text="What help do you need?" onClick={() => setIsButtonClicked(true)} />
                 }
             </main>
-        </div>
     )
 }

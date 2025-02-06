@@ -20,8 +20,7 @@ export default function AskOut() {
         }, 5000)
     }, [])
     return (
-        <div className="bg-pink-100 w-full h-screen flex items-center justify-center gap-2">
-            <main className="grid items-center gap-2">
+            <main className="grid justify-items-center gap-2">
                 {isYes && <Confetti
                     width={width}
                     height={height}
@@ -53,6 +52,5 @@ export default function AskOut() {
                         )
                 }
             </main>
-        </div>
     );
 }

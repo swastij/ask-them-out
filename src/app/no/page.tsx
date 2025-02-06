@@ -23,24 +23,24 @@ export default function No() {
         }
     }, [noState])
     return (
-        <div className="bg-blue-100 w-full h-screen flex items-center justify-center gap-2">
-            <main className="grid items-center gap-2">
+        <div className="bg-blue-100 h-full w-full flex items-center justify-center">
+        <main className="grid justify-items-center gap-2">
 
-                <Title text={`But I ${Array(noState + 1).fill(0).map(() => "really ")} like you`} isBlue />
-                
-                <img alt="pleading-gif" src={`/gifs/${visibleGif}`} className="w-[400px] m-auto rounded-md" ></img>
+            <Title text={`But I ${(Array(noState + 1).fill(0).map(() => "really ")).toString().replace(/,/g, "")} like you`} isBlue />
 
-                <div className="flex items-center gap-2 justify-center mt-2">
-                    <MyButton text="No" onClick={updateNo} isBlue={true} />
-                    
-                    <Link href='/final-again' className="h-[50px] p-2 bg-blue-300 border-md border-pink-600 w-fit rounded-md" >
-                        <p className='text-center font-white'>
-                            Fine, ask me again
-                        </p>
-                    </Link>
+            <img alt="pleading-gif" src={`/gifs/${visibleGif}`} className="min-w-[400px] h-[400px] object-fit m-auto rounded-md" ></img>
 
-                </div>
-            </main>
+            <div className="flex items-center gap-2 justify-center mt-2">
+                <MyButton text="No" onClick={updateNo} isBlue={true} />
+
+                <Link href='/final-again' className="h-[50px] p-2 bg-blue-300 border-md border-pink-600 w-fit rounded-md" >
+                    <p className='text-center font-white'>
+                        Fine, ask me again
+                    </p>
+                </Link>
+
+            </div>
+        </main>
         </div>
     )
 }
