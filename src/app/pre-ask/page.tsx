@@ -1,10 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 
 'use client';
 import MyButton from '@/components/button';
 import Title from '@/components/title';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image';
 
 export default function PreAsk() {
     const [isButtonClicked, setIsButtonClicked] = useState(false);
@@ -22,7 +23,7 @@ export default function PreAsk() {
 
         <main className="grid justify-items-center gap-2">
             <Title text=" You have a message!" />
-            {isButtonClicked && <img alt='ask-gifs' src={`/gifs/${visibleGif}`} className="h-[400px] w-full m-auto rounded-md" ></img>}
+            {isButtonClicked && <Image priority alt='ask-gifs' src={`/gifs/${visibleGif}`}  width={400} height={400} className="h-[400px] w-full m-auto rounded-md" />}
 
             <div className="flex items-center gap-2 justify-center mt-2">
                 {!isButtonClicked && <MyButton text='Open' onClick={() => { setIsButtonClicked(true) }} />

@@ -1,7 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 'use client';
 
 import Title from "@/components/title";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
     <main className="grid justify-items-center gap-2">
       <Title text="
           Oh, you are here!"/>
-      <img alt="blush-anime" src="/gifs/blush-anime.gif" className="w-[400px] m-auto rounded-md" ></img>
+      <Image priority alt="blush-anime" src="/gifs/blush-anime.gif" width={400} height={100} className="w-[400px] h-auto m-auto rounded-md" />
       <Title text="
           I want to ask for your help in something"/>
       <div className="flex mt-2 items-center gap-2 justify-center">

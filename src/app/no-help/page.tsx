@@ -1,10 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 
 'use client';
 import MyButton from '@/components/button';
 import Title from '@/components/title';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image';
 
 export default function NoHelp() {
     const [noState, setNoState] = useState(0);
@@ -27,7 +28,7 @@ export default function NoHelp() {
         <main className="grid justify-items-center gap-2">
             <Title isBlue text=
                 {(Array(noState + 1).fill(0).map(() => "Please? ")).toString().replace(/,/g, "")} />
-            <img alt="tearful-gif" src={`/gifs/${visibleGif}`} className="w-[400px] m-auto rounded-md" ></img>
+            <Image priority alt="tearful-gif" src={`/gifs/${visibleGif}`} width={400} height={100} className="w-[400px] m-auto rounded-md" />
 
             <div className="flex items-center gap-2 mt-2 justify-center">
                 <MyButton text="No" onClick={updateNo} isBlue />

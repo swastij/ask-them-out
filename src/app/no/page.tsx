@@ -1,10 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 
 'use client';
 import MyButton from '@/components/button';
 import Title from '@/components/title';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image';
 
 export default function No() {
     const [noState, setNoState] = useState(0);
@@ -28,7 +29,7 @@ export default function No() {
 
             <Title text={`But I ${(Array(noState + 1).fill(0).map(() => "really ")).toString().replace(/,/g, "")} like you`} isBlue />
 
-            <img alt="pleading-gif" src={`/gifs/${visibleGif}`} className="min-w-[400px] h-[400px] object-fit m-auto rounded-md" ></img>
+            <Image priority alt="pleading-gif" src={`/gifs/${visibleGif}`} width={400} height={400} className="w-full min-w-[400px] h-[400px] object-fit m-auto rounded-md" />
 
             <div className="flex items-center gap-2 justify-center mt-2">
                 <MyButton text="No" onClick={updateNo} isBlue={true} />

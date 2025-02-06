@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+
 
 'use client';
 
@@ -8,7 +8,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Confetti from 'react-confetti'
 import { useWindowSize } from 'react-use';
-
+import Image
+    from "next/image";
 export default function AskOut() {
     const [visibleGif, setVisibleGif] = useState('kitty-shy.gif')
     const { width, height } = useWindowSize()
@@ -20,37 +21,37 @@ export default function AskOut() {
         }, 5000)
     }, [])
     return (
-            <main className="grid justify-items-center gap-2">
-                {isYes && <Confetti
-                    width={width}
-                    height={height}
-                />}
-                <Title text=
-                    {visibleGif == "peach-shy.gif" && !isYes ? "Will you be my valentine?" : (!isYes ? "Um, you are cute and ..." : "US <3 <3 <3")} />
+        <main className="grid justify-items-center gap-2">
+            {isYes && <Confetti
+                width={width}
+                height={height}
+            />}
+            <Title text=
+                {visibleGif == "peach-shy.gif" && !isYes ? "Will you be my valentine?" : (!isYes ? "Um, you are cute and ..." : "US <3 <3 <3")} />
 
-                <img alt='couple-gif' src={isYes ? "/gifs/mochi-mochi-peach-cat.gif" : `/gifs/${visibleGif}`} className="w-[400px] m-auto rounded-md" ></img>
+            <Image priority alt='couple-gif' src={isYes ? "/gifs/mochi-mochi-peach-cat.gif" : `/gifs/${visibleGif}`} width={400} height={100} className="w-[400px] m-auto rounded-md" />
 
-                {visibleGif == "you-make-my-heart-twerk-twerk-it.gif" && <Link href='/final' className="h-[50px] p-2 mt-5 bg-pink-300 border-md border-pink-600 w-fit" >
-                    <p>
-                        Okay?
-                    </p>
-                </Link>
-                }
-                {
-                    isYes ? <></> :
-                        (visibleGif == "peach-shy.gif" &&
-                            <div className="flex items-center gap-2 justify-center mt-2">
-                                <MyButton text="YES!!" onClick={() => setIsYes(true)} />
+            {visibleGif == "you-make-my-heart-twerk-twerk-it.gif" && <Link href='/final' className="h-[50px] p-2 mt-5 bg-pink-300 border-md border-pink-600 w-fit" >
+                <p>
+                    Okay?
+                </p>
+            </Link>
+            }
+            {
+                isYes ? <></> :
+                    (visibleGif == "peach-shy.gif" &&
+                        <div className="flex items-center gap-2 justify-center mt-2">
+                            <MyButton text="YES!!" onClick={() => setIsYes(true)} />
 
-                                <Link aria-label='no' href="/no" className="h-[50px] p-2  bg-pink-300 border-md border-pink-600 w-fit rounded-md" >
+                            <Link aria-label='no' href="/no" className="h-[50px] p-2  bg-pink-300 border-md border-pink-600 w-fit rounded-md" >
 
-                                    <p>
-                                        NO :/
-                                    </p>
-                                </Link>
-                            </div>
-                        )
-                }
-            </main>
+                                <p>
+                                    NO :/
+                                </p>
+                            </Link>
+                        </div>
+                    )
+            }
+        </main>
     );
 }
